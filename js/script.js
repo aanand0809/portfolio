@@ -356,8 +356,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 9. UNIVERSAL CONTACT FORM HANDLER
-    // (Vercel static/serverless + Local PHP fallback)
+    // 9. REAL-TIME EMAIL CONTACT FORM HANDLER
+    // (Direct inbox delivery to anandgupta875728@gmail.com)
     // ==========================================
     const contactForm = document.getElementById("contact-form");
     const formToast = document.getElementById("formToast");
@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             formToast.style.display = "none";
-        }, 6000);
+        }, 7000);
     }
 
     if (contactForm) {
@@ -394,9 +394,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const subject = document.getElementById("subject").value.trim();
             const message = document.getElementById("message").value.trim();
 
-            if (!name || !email || !message) {
+            if (!name || !email || !subject || !message) {
                 showToast("Please fill in all required fields.", false);
                 return;
+            }
+
+            // Set subject field for email header
+            const subjectInput = document.getElementById("formSubmitSubject");
+            if (subjectInput) {
+                subjectInput.value = `Portfolio Contact: ${subject} (from ${name})`;
             }
 
             // Button loading state
@@ -404,48 +410,52 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = `
                 <i class="fa-solid fa-spinner fa-spin"></i>
-                <span>Sending Message...</span>
+                <span>Sending to Anand's Email...</span>
             `;
 
-            let isSent = false;
-
-            // Attempt 1: If PHP backend is available (local XAMPP)
             try {
+                // Prepare form data for FormSubmit API
                 const formData = new FormData(contactForm);
-                const response = await fetch("php/contact.php", {
+
+                const response = await fetch("https://formsubmit.co/ajax/anandgupta875728@gmail.com", {
                     method: "POST",
+                    headers: {
+                        "Accept": "application/json"
+                    },
                     body: formData
                 });
 
-                if (response.ok) {
-                    const result = await response.json();
-                    if (result && result.success) {
-                        isSent = true;
-                        showToast(result.message || "Thank you! Your message has been sent successfully.", true);
-                        contactForm.reset();
-                    }
-                }
-            } catch (err) {
-                // PHP endpoint is not available (e.g. running statically on Vercel)
-                console.log("Local PHP backend unavailable. Using client-side email dispatch.");
-            }
+                const data = await response.json();
 
-            // Attempt 2: If on static hosting (Vercel), handle gracefully with direct email trigger or toast confirmation
-            if (!isSent) {
-                setTimeout(() => {
-                    showToast(
-                        `Thank you, ${name}! Your message has been recorded. You can also reach Anand directly at anandgupta875728@gmail.com.`,
-                        true
-                    );
+                if (response.ok || data.success === "true" || data.success === true) {
+                    showToast(`Thank you, ${name}! Your message has been sent directly to Anand's email (anandgupta875728@gmail.com).`, true);
                     contactForm.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnHtml;
-                }, 800);
-                return;
-            }
+                } else {
+                    throw new Error(data.message || "Failed to send message via email service.");
+                }
 
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnHtml;
+                // Also silently record to local PHP if running locally
+                try {
+                    fetch("php/contact.php", { method: "POST", body: formData });
+                } catch (phpErr) {
+                    // Ignore PHP error on static hosting
+                }
+
+            } catch (error) {
+                console.error("Email delivery error:", error);
+                
+                // Fallback: Open mailto link so user message is never lost
+                showToast(`Sending automated email encountered an issue. Opening your email app to send directly...`, false);
+                
+                setTimeout(() => {
+                    const mailtoUrl = `mailto:anandgupta875728@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+                    window.location.href = mailtoUrl;
+                }, 1500);
+
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+            }
         });
     }
 });

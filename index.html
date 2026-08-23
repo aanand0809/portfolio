@@ -596,7 +596,13 @@
                             <span id="toastMessage">Your message has been sent successfully!</span>
                         </div>
 
-                        <form id="contact-form" class="contact-form">
+                        <form id="contact-form" class="contact-form" action="https://formsubmit.co/anandgupta875728@gmail.com" method="POST">
+                            <!-- FormSubmit Config for Direct Email Delivery -->
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_subject" id="formSubmitSubject" value="New Portfolio Message">
+                            <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Anand Kumar! I have received your message and will respond shortly.">
+
                             <div class="form-group">
                                 <label for="name">Your Name</label>
                                 <input type="text" id="name" name="name" class="form-control" placeholder="e.g. John Doe" required>
