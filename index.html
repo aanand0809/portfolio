@@ -4,43 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anand Kumar - B.Tech CSE Student, Data Analytics Enthusiast, Python & SQL Developer, and Campus Lead at Open Source Connect India 2026. Explore projects, certifications, and skills.">
+    <meta name="keywords" content="Anand Kumar, Data Analytics, Python, SQL, Power BI, Web Development, Portfolio, CSE Student">
+    <meta name="author" content="Anand Kumar">
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="Anand Kumar | Portfolio">
+    <meta property="og:description" content="B.Tech CSE Student | Data Analytics Enthusiast | Python • SQL • Power BI | OSCI'26 Campus Lead">
+    <meta property="og:image" content="images/profile.jpg">
+    <meta property="og:type" content="website">
 
     <title>Anand Kumar | Portfolio</title>
 
-    <!-- Google Font -->
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-    <!-- CSS -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- ================= NAVBAR ================= -->
-
-    <header class="header">
-
+    <header class="header" id="header">
         <div class="container nav-container">
-
-            <a href="#home" class="logo">
+            <a href="#home" class="logo" aria-label="Anand Kumar Home">
                 Anand <span>Kumar</span>
-                <small>&lt;/&gt;</small>
+                <span class="logo-tag">&lt;/&gt;</span>
             </a>
 
-            <nav class="navbar" id="navbar">
-
+            <nav class="navbar" id="navbar" aria-label="Main Navigation">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#skills" class="nav-link">Skills</a>
@@ -48,1229 +46,629 @@
                 <a href="#certificates" class="nav-link">Certificates</a>
                 <a href="#achievements" class="nav-link">Achievements</a>
                 <a href="#contact" class="nav-link">Contact</a>
-
             </nav>
 
             <div class="nav-actions">
-
-                <button
-                    id="themeToggle"
-                    class="theme-btn"
-                    title="Change Theme"
-                >
-                    <i class="fa-solid fa-moon"></i>
+                <!-- Dark / Light Theme Toggle -->
+                <button id="themeToggle" class="theme-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
                 </button>
 
+                <!-- Hire Me Link -->
                 <a href="#contact" class="hire-btn">
-                    <i class="fa-solid fa-briefcase"></i>
-                    Hire Me
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Hire Me</span>
                 </a>
 
-                <button class="menu-btn" id="menuBtn">
-                    <i class="fa-solid fa-bars"></i>
+                <!-- Mobile Hamburger Toggle -->
+                <button class="menu-btn" id="menuBtn" title="Toggle Navigation Menu" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
                 </button>
-
             </div>
-
         </div>
-
     </header>
 
+    <!-- Mobile Navigation Overlay Backdrop -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
-    <!-- ================= MAIN ================= -->
-
+    <!-- ================= MAIN CONTENT ================= -->
     <main>
 
-        <!-- ================= HOME ================= -->
-
+        <!-- ================= HERO SECTION ================= -->
         <section id="home" class="hero">
-
             <div class="container hero-container">
 
-                <!-- LEFT -->
-
-                <div class="hero-content">
-
+                <!-- Left Content -->
+                <div class="hero-content reveal">
                     <div class="hello-badge">
-                        👋 Hello, I'm
+                        <i class="fa-solid fa-hand-wave"></i>
+                        <span>Welcome to my portfolio</span>
                     </div>
 
                     <h1>
-                        Anand <span>Kumar</span>
+                        Hi, I'm <span class="highlight">Anand Kumar</span>
                     </h1>
 
-                    <h2>
-                        B.Tech CSE Student
-                        <span>|</span>
-                        Data Analytics Enthusiast
-                        <span>|</span>
-                        Aspiring Software Developer
-                    </h2>
-
-                    <p>
-                        B.Tech CSE student | Aspiring Data Analyst 📊 |
-                        Python • SQL • Power BI • Excel |
-                        Open Source Connect India 2026 Campus Lead 🚀 |
-                        Passionate about Data, Technology & Open Source.
-                    </p>
-
-
-                    <!-- BUTTONS -->
-
-                    <div class="hero-buttons">
-
-                        <a
-                            href="#"
-                            class="btn primary-btn"
-                            onclick="alert('Resume will be available soon.'); return false;"
-                        >
-                            <i class="fa-solid fa-download"></i>
-                            Download Resume
-                        </a>
-
-                        <a
-                            href="#projects"
-                            class="btn secondary-btn"
-                        >
-                            View My Work
-                        </a>
-
+                    <div class="hero-typewriter-wrapper">
+                        <span id="typewriterText">Data Analytics Enthusiast</span>
+                        <span class="typewriter-cursor"></span>
                     </div>
 
+                    <p class="hero-bio">
+                        B.Tech CSE student passionate about <strong>Data Analytics 📊</strong>, <strong>Python</strong>, <strong>SQL</strong>, and <strong>Power BI</strong>. Currently serving as <strong>Open Source Connect India 2026 Campus Lead 🚀</strong>. Dedicated to building data-driven insights and modern software solutions.
+                    </p>
 
-                    <!-- SOCIAL LINKS -->
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <a href="images/profile.jpg" download="Anand_Kumar_CV" id="resumeBtn" class="btn primary-btn">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span>Download Resume</span>
+                        </a>
 
+                        <a href="#projects" class="btn secondary-btn">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <span>View Projects</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Icons -->
                     <div class="social-links">
-
-                        <!-- LinkedIn -->
-
-                        <a
-                            href="https://www.linkedin.com/in/anand-kumar-691678362"
-                            title="LinkedIn"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://www.linkedin.com/in/anand-kumar-691678362" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-
-
-                        <!-- GitHub -->
-
-                        <a
-                            href="https://github.com/aanand0809"
-                            title="GitHub"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://github.com/aanand0809" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
-
-
-                        <!-- Gmail -->
-
-                        <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=anandgupta875728@gmail.com"
-                            title="Email Me"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anandgupta875728@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Send Email" aria-label="Email">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
-
+                        <a href="tel:+917352644778" class="social-link" title="Call Me" aria-label="Phone">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
                     </div>
-
                 </div>
 
+                <!-- Right Profile Image -->
+                <div class="hero-image-area reveal">
+                    <div class="profile-backdrop-glow"></div>
 
-                <!-- RIGHT -->
-
-                <div class="hero-image-area">
-
-                    <div class="image-glow"></div>
-
-                    <div class="profile-wrapper">
-
-                        <img
-                            src="images/profile.jpg"
-                            alt="Anand Kumar"
-                            class="profile-image"
-                        >
-
-                    </div>
-
-
-                    <!-- Availability -->
-
-                    <div class="availability-card">
-
-                        <div class="status">
-
-                            <span class="status-dot"></span>
-
-                            Available for
-
+                    <!-- Floating Badge: OSCI'26 Campus Lead -->
+                    <div class="floating-badge badge-lead">
+                        <i class="fa-solid fa-rocket" style="color: #00d2ff; font-size: 18px;"></i>
+                        <div>
+                            <div class="badge-text-title">Lead Role</div>
+                            <div class="badge-text-val">OSCI'26 Campus Lead</div>
                         </div>
-
-                        <strong>Internships</strong>
-
-                        <a href="#contact">
-                            Let's Connect →
-                        </a>
-
                     </div>
 
+                    <!-- Profile Photo Frame -->
+                    <div class="profile-wrapper">
+                        <img src="images/profile.jpg" alt="Anand Kumar Profile" class="profile-image" loading="eager">
+                    </div>
+
+                    <!-- Floating Badge: Availability -->
+                    <div class="floating-badge badge-availability">
+                        <span class="status-indicator"></span>
+                        <div>
+                            <div class="badge-text-title">Status</div>
+                            <div class="badge-text-val">Open for Internships</div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- ================= ABOUT ================= -->
-
-        <section
-            id="about"
-            class="section about-section"
-        >
-
+        <!-- ================= ABOUT SECTION ================= -->
+        <section id="about" class="section about-section">
             <div class="container">
-
-                <div class="section-heading">
-
-                    <span>About Me</span>
-
-                    <h2>
-                        Know More About Me
-                    </h2>
-
-                    <p>
-                        A little introduction about my journey,
-                        interests and goals.
-                    </p>
-
+                <div class="section-heading reveal">
+                    <span class="section-badge">About Me</span>
+                    <h2>Passionate About Technology & Problem Solving</h2>
+                    <p>Get to know more about my background, learning journey, and technical aspirations.</p>
                 </div>
-
 
                 <div class="about-content">
-
-                    <div class="about-text">
-
-                        <h3>
-                            I'm Anand Kumar
-                        </h3>
-
+                    <div class="about-text reveal">
+                        <h3>Turning Complex Data Into Actionable Insights</h3>
                         <p>
-                            I’m a B.Tech CSE student passionate about
-                            Data Analytics, Open Source and technology.
-                            I’m building skills in Python, SQL, Excel
-                            and Power BI through projects and practical
-                            learning.
+                            I am a Computer Science & Engineering (B.Tech) student deeply interested in <strong>Data Analytics</strong>, <strong>Business Intelligence</strong>, and <strong>Full-Stack Development</strong>. My focus lies in solving real-world challenges through statistical modeling, data visualization, and robust programming.
+                        </p>
+                        <p>
+                            As a <strong>Campus Lead for Open Source Connect India 2026</strong>, I mentor peers, host community workshops, and advocate for collaborative development. I am continuously expanding my expertise in Python, SQL, Power BI, Machine Learning fundamentals, and cloud technologies.
                         </p>
 
-                        <p>
-                            As a Campus Lead at Open Source Connect India
-                            2026, I’m also focused on community building
-                            and encouraging students to explore open source.
-                            I’m always eager to learn, build and solve
-                            real-world problems. 🚀
-                        </p>
-
-                        <p>
-                            I enjoy creating practical projects and
-                            continuously improving my programming and
-                            problem-solving skills.
-                        </p>
-
-                        <a
-                            href="#contact"
-                            class="btn primary-btn"
-                        >
-                            Let's Connect
-                        </a>
-
+                        <div class="about-cta">
+                            <a href="#contact" class="btn primary-btn">
+                                <i class="fa-solid fa-comments"></i>
+                                <span>Let's Connect</span>
+                            </a>
+                            <a href="#certificates" class="btn secondary-btn">
+                                <i class="fa-solid fa-award"></i>
+                                <span>My Certifications</span>
+                            </a>
+                        </div>
                     </div>
 
-
-                    <div class="about-stats">
-
+                    <div class="about-stats reveal">
                         <div class="stat-card">
-
-                            <i class="fa-solid fa-graduation-cap"></i>
-
-                            <h3>B.Tech</h3>
-
-                            <p>CSE Student</p>
-
+                            <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="stat-number">B.Tech</div>
+                            <div class="stat-label">CSE Undergrad</div>
                         </div>
 
-
                         <div class="stat-card">
-
-                            <i class="fa-solid fa-code"></i>
-
-                            <h3>5+</h3>
-
-                            <p>Projects</p>
-
+                            <div class="stat-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                            <div class="stat-number count-up" data-target="5">5+</div>
+                            <div class="stat-label">Projects Built</div>
                         </div>
 
-
                         <div class="stat-card">
-
-                            <i class="fa-solid fa-certificate"></i>
-
-                            <h3>10+</h3>
-
-                            <p>Certificates</p>
-
+                            <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
+                            <div class="stat-number count-up" data-target="10">10+</div>
+                            <div class="stat-label">Certificates Earned</div>
                         </div>
 
-
                         <div class="stat-card">
-
-                            <i class="fa-solid fa-laptop-code"></i>
-
-                            <h3>100%</h3>
-
-                            <p>Learning Mindset</p>
-
+                            <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <div class="stat-number count-up" data-target="100">100+</div>
+                            <div class="stat-label">Hours of Hands-on Lab</div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- ================= SKILLS ================= -->
-
-        <section
-            id="skills"
-            class="section skills-section"
-        >
-
+        <!-- ================= SKILLS SECTION ================= -->
+        <section id="skills" class="section skills-section">
             <div class="container">
-
-                <div class="section-heading">
-
-                    <span>My Skills</span>
-
-                    <h2>
-                        Technologies I Work With
-                    </h2>
-
-                    <p>
-                        Skills and technologies that I am
-                        learning and working with.
-                    </p>
-
+                <div class="section-heading reveal">
+                    <span class="section-badge">My Skillset</span>
+                    <h2>Technologies & Tools I Use</h2>
+                    <p>A comprehensive toolkit I leverage to analyze data, build applications, and solve problems.</p>
                 </div>
 
+                <!-- Skill Filter Tabs -->
+                <div class="skills-filter reveal">
+                    <button class="filter-btn active" data-filter="all">All Skills</button>
+                    <button class="filter-btn" data-filter="data">Data & Analytics</button>
+                    <button class="filter-btn" data-filter="dev">Development</button>
+                    <button class="filter-btn" data-filter="tools">Tools & Core</button>
+                </div>
 
                 <div class="skills-grid">
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-python"></i>
-
+                    <!-- Python -->
+                    <div class="skill-card reveal" data-category="data dev">
+                        <div class="skill-icon-wrapper"><i class="fa-brands fa-python"></i></div>
                         <h3>Python</h3>
-
-                        <p>
-                            Programming & Data Analysis
-                        </p>
-
+                        <p>Pandas, NumPy, Scripting & Automation</p>
                     </div>
 
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-html5"></i>
-
-                        <h3>HTML</h3>
-
-                        <p>
-                            Web Structure
-                        </p>
-
+                    <!-- MySQL -->
+                    <div class="skill-card reveal" data-category="data dev">
+                        <div class="skill-icon-wrapper"><i class="fa-solid fa-database"></i></div>
+                        <h3>SQL & MySQL</h3>
+                        <p>Queries, Joins, Data Modeling</p>
                     </div>
 
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-css3-alt"></i>
-
-                        <h3>CSS</h3>
-
-                        <p>
-                            Responsive UI Design
-                        </p>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-js"></i>
-
-                        <h3>JavaScript</h3>
-
-                        <p>
-                            Web Interactivity
-                        </p>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-database"></i>
-
-                        <h3>MySQL</h3>
-
-                        <p>
-                            Database Management
-                        </p>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-chart-column"></i>
-
+                    <!-- Power BI -->
+                    <div class="skill-card reveal" data-category="data">
+                        <div class="skill-icon-wrapper"><i class="fa-solid fa-chart-pie"></i></div>
                         <h3>Power BI</h3>
-
-                        <p>
-                            Data Visualization
-                        </p>
-
+                        <p>Interactive Dashboards & Business Insights</p>
                     </div>
 
+                    <!-- Excel -->
+                    <div class="skill-card reveal" data-category="data">
+                        <div class="skill-icon-wrapper"><i class="fa-solid fa-file-excel"></i></div>
+                        <h3>MS Excel</h3>
+                        <p>Pivot Tables, Formulas & Analytics</p>
+                    </div>
 
-                    <div class="skill-card">
+                    <!-- HTML5 -->
+                    <div class="skill-card reveal" data-category="dev">
+                        <div class="skill-icon-wrapper"><i class="fa-brands fa-html5"></i></div>
+                        <h3>HTML5</h3>
+                        <p>Semantic Structure & SEO Standards</p>
+                    </div>
 
-                        <i class="fa-brands fa-github"></i>
+                    <!-- CSS3 -->
+                    <div class="skill-card reveal" data-category="dev">
+                        <div class="skill-icon-wrapper"><i class="fa-brands fa-css3-alt"></i></div>
+                        <h3>CSS3</h3>
+                        <p>Flexbox, Grid, Responsive Design</p>
+                    </div>
 
+                    <!-- JavaScript -->
+                    <div class="skill-card reveal" data-category="dev">
+                        <div class="skill-icon-wrapper"><i class="fa-brands fa-js"></i></div>
+                        <h3>JavaScript</h3>
+                        <p>DOM Manipulation, ES6+ & Async Fetch</p>
+                    </div>
+
+                    <!-- Git & GitHub -->
+                    <div class="skill-card reveal" data-category="tools">
+                        <div class="skill-icon-wrapper"><i class="fa-brands fa-github"></i></div>
                         <h3>Git & GitHub</h3>
-
-                        <p>
-                            Version Control
-                        </p>
-
+                        <p>Version Control & Team Collaboration</p>
                     </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-brain"></i>
-
-                        <h3>Machine Learning</h3>
-
-                        <p>
-                            Currently Learning
-                        </p>
-
-                    </div>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- ================= PROJECTS ================= -->
-
-        <section
-            id="projects"
-            class="section projects-section"
-        >
-
+        <!-- ================= PROJECTS SECTION ================= -->
+        <section id="projects" class="section projects-section">
             <div class="container">
-
-                <div class="section-heading">
-
-                    <span>My Work</span>
-
-                    <h2>
-                        Featured Projects
-                    </h2>
-
-                    <p>
-                        Some of my practical projects
-                        and learning work.
-                    </p>
-
+                <div class="section-heading reveal">
+                    <span class="section-badge">Portfolio Showcase</span>
+                    <h2>Featured Projects</h2>
+                    <p>Explore some of the practical applications, analytics dashboards, and web solutions I have engineered.</p>
                 </div>
-
 
                 <div class="projects-grid">
-
-
-                    <!-- CareerPilot -->
-
-                    <article class="project-card">
-
-                        <div class="project-icon">
-
-                            <i class="fa-solid fa-user-tie"></i>
-
+                    <!-- Project 1: CareerPilot AI -->
+                    <article class="project-card reveal">
+                        <div>
+                            <div class="project-header">
+                                <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+                                <span class="project-badge">AI & Web</span>
+                            </div>
+                            <h3>CareerPilot AI</h3>
+                            <p>
+                                An intelligent career preparation platform designed to help students analyze resumes, match career pathways, and discover tailored tech opportunities.
+                            </p>
                         </div>
-
-                        <h3>
-                            CareerPilot AI
-                        </h3>
-
-                        <p>
-                            An AI-powered career platform designed
-                            to help students analyze resumes,
-                            explore career options and find
-                            suitable opportunities.
-                        </p>
-
-                        <div class="project-tech">
-
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>PHP</span>
-                            <span>MySQL</span>
-
+                        <div>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/aanand0809" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>GitHub Repo</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="#contact" class="project-link">
+                                    <span>Details</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
                         </div>
-
-                        <a
-                            href="#"
-                            class="project-link"
-                            onclick="alert('Project link will be added soon.'); return false;"
-                        >
-                            View Project →
-                        </a>
-
                     </article>
 
-
-                    <!-- Sales Data Analysis -->
-
-                    <article class="project-card">
-
-                        <div class="project-icon">
-
-                            <i class="fa-solid fa-chart-line"></i>
-
+                    <!-- Project 2: Sales Data Analysis -->
+                    <article class="project-card reveal">
+                        <div>
+                            <div class="project-header">
+                                <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <span class="project-badge">Data Analytics</span>
+                            </div>
+                            <h3>Sales Data Analytics</h3>
+                            <p>
+                                End-to-end exploratory data analysis with interactive Power BI dashboards highlighting monthly revenue trends, customer segments, and top-performing products.
+                            </p>
                         </div>
-
-                        <h3>
-                            Sales Data Analysis
-                        </h3>
-
-                        <p>
-                            Created multiple visualizations including
-                            monthly sales trends, top selling products,
-                            sales by category and profit by city.
-                        </p>
-
-                        <div class="project-tech">
-
-                            <span>Power BI</span>
-                            <span>Excel</span>
-                            <span>Data Analytics</span>
-
+                        <div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">Excel</span>
+                                <span class="tech-tag">DAX</span>
+                                <span class="tech-tag">Data Modeling</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/aanand0809" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>GitHub Repo</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="#contact" class="project-link">
+                                    <span>Details</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
                         </div>
-
-                        <a
-                            href="#"
-                            class="project-link"
-                            onclick="alert('Project link will be added soon.'); return false;"
-                        >
-                            View Project →
-                        </a>
-
                     </article>
 
-
-                    <!-- Education Platform -->
-
-                    <article class="project-card">
-
-                        <div class="project-icon">
-
-                            <i class="fa-solid fa-graduation-cap"></i>
-
+                    <!-- Project 3: Education Platform Concept -->
+                    <article class="project-card reveal">
+                        <div>
+                            <div class="project-header">
+                                <div class="project-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <span class="project-badge">EdTech</span>
+                            </div>
+                            <h3>Smart Education Hub</h3>
+                            <p>
+                                A centralized academic portal where students can organize course materials, track syllabus progress, and access curated practice tests and resources.
+                            </p>
                         </div>
-
-                        <h3>
-                            Education Platform
-                        </h3>
-
-                        <p>
-                            Educational platform concept for students
-                            to access learning resources, notes and
-                            competitive exam preparation material.
-                        </p>
-
-                        <div class="project-tech">
-
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-
+                        <div>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">UI/UX</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/aanand0809" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>GitHub Repo</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="#contact" class="project-link">
+                                    <span>Details</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
                         </div>
-
-                        <a
-                            href="#"
-                            class="project-link"
-                            onclick="alert('Project link will be added soon.'); return false;"
-                        >
-                            View Project →
-                        </a>
-
                     </article>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- ================= CERTIFICATES ================= -->
-
-        <section
-            id="certificates"
-            class="section certificates-section"
-        >
-
+        <!-- ================= CERTIFICATES SECTION ================= -->
+        <section id="certificates" class="section certificates-section">
             <div class="container">
-
-                <div class="section-heading">
-
-                    <span>My Certificates</span>
-
-                    <h2>
-                        Certifications & Learning
-                    </h2>
-
-                    <p>
-                        Certifications and learning experiences
-                        that helped me improve my technical skills.
-                    </p>
-
+                <div class="section-heading reveal">
+                    <span class="section-badge">Verified Credentials</span>
+                    <h2>Certifications & Learning</h2>
+                    <p>Click on any certificate to view the verified credential preview.</p>
                 </div>
-
 
                 <div class="certificate-grid">
-
-
                     <!-- Certificate 1 -->
-
-                    <div class="certificate-card">
-
-                        <i class="fa-solid fa-chart-line"></i>
-
-                        <h3>
-                            Deloitte Australia Data Analytics
-                        </h3>
-
-                        <p>
-                            Completed a Deloitte Data Analytics
-                            job simulation involving data analysis,
-                            visualization and business insights.
-                        </p>
-
-                        <span>
-                            Forage
-                        </span>
-
-                        <a
-                            href="images/certificate1.jpg"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            View Certificate →
-                        </a>
-
+                    <div class="certificate-card reveal" data-cert="images/certificate1.jpg" data-title="Deloitte Australia - Data Analytics Simulation" data-issuer="Forage / Deloitte">
+                        <div class="certificate-icon"><i class="fa-solid fa-chart-simple"></i></div>
+                        <h3>Deloitte Data Analytics</h3>
+                        <p>Completed practical simulation covering data analysis, business dashboard creation, and insight reporting.</p>
+                        <span class="cert-issuer">Forage • Deloitte</span>
+                        <div class="cert-view-btn">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>View Certificate</span>
+                        </div>
                     </div>
-
 
                     <!-- Certificate 2 -->
-
-                    <div class="certificate-card">
-
-                        <i class="fa-solid fa-robot"></i>
-
-                        <h3>
-                            GenAI Powered Data Analytics
-                        </h3>
-
-                        <p>
-                            Learned how Generative AI can be used
-                            with data analytics, automation and
-                            business problem solving.
-                        </p>
-
-                        <span>
-                            Forage
-                        </span>
-
-                        <a
-                            href="images/certificate2.jpg"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            View Certificate →
-                        </a>
-
+                    <div class="certificate-card reveal" data-cert="images/certificate2.jpg" data-title="GenAI Powered Data Analytics" data-issuer="Forage">
+                        <div class="certificate-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>GenAI Data Analytics</h3>
+                        <p>Leveraging generative AI models with statistical analysis and prompt engineering for data workflows.</p>
+                        <span class="cert-issuer">Forage</span>
+                        <div class="cert-view-btn">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>View Certificate</span>
+                        </div>
                     </div>
-
 
                     <!-- Certificate 3 -->
-
-                    <div class="certificate-card">
-
-                        <i class="fa-solid fa-chart-column"></i>
-
-                        <h3>
-                            Data Visualization
-                        </h3>
-
-                        <p>
-                            Developed understanding of data
-                            visualization and transforming data
-                            into meaningful business insights.
-                        </p>
-
-                        <span>
-                            Forage
-                        </span>
-
-                        <a
-                            href="images/certificate3.jpg"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            View Certificate →
-                        </a>
-
+                    <div class="certificate-card reveal" data-cert="images/certificate3.jpg" data-title="Data Visualization Simulation" data-issuer="Forage">
+                        <div class="certificate-icon"><i class="fa-solid fa-chart-column"></i></div>
+                        <h3>Data Visualization</h3>
+                        <p>Transforming complex multivariate datasets into executive-level visual reports and storytelling graphs.</p>
+                        <span class="cert-issuer">Forage</span>
+                        <div class="cert-view-btn">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>View Certificate</span>
+                        </div>
                     </div>
-
 
                     <!-- Certificate 4 -->
-
-                    <div class="certificate-card">
-
-                        <i class="fa-solid fa-brain"></i>
-
-                        <h3>
-                            Generative AI Mastermind
-                        </h3>
-
-                        <p>
-                            Learned practical applications of AI
-                            tools, Generative AI and prompt-based
-                            problem solving.
-                        </p>
-
-                        <span>
-                            Outskill
-                        </span>
-
-                        <a
-                            href="images/certificate4.jpg"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            View Certificate →
-                        </a>
-
+                    <div class="certificate-card reveal" data-cert="images/certificate4.jpg" data-title="Generative AI Mastermind" data-issuer="Outskill">
+                        <div class="certificate-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Generative AI Mastermind</h3>
+                        <p>Applied LLM integration, prompt engineering techniques, and practical AI application pipelines.</p>
+                        <span class="cert-issuer">Outskill</span>
+                        <div class="cert-view-btn">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>View Certificate</span>
+                        </div>
                     </div>
-
 
                     <!-- Certificate 5 -->
-
-                    <div class="certificate-card">
-
-                        <i class="fa-solid fa-microchip"></i>
-
-                        <h3>
-                            Getting Started With AI & ChatGPT
-                        </h3>
-
-                        <p>
-                            Completed a technical workshop focused
-                            on Artificial Intelligence, ChatGPT
-                            and practical AI learning.
-                        </p>
-
-                        <span>
-                            TechFest / Workshop
-                        </span>
-
-                        <a
-                            href="images/certificate5.jpg"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            View Certificate →
-                        </a>
-
+                    <div class="certificate-card reveal" data-cert="images/certificate5.jpg" data-title="Getting Started with AI & ChatGPT" data-issuer="TechFest Workshop">
+                        <div class="certificate-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>AI & ChatGPT Workshop</h3>
+                        <p>Hands-on intensive workshop examining transformer architectures and automation scripting.</p>
+                        <span class="cert-issuer">TechFest Workshop</span>
+                        <div class="cert-view-btn">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>View Certificate</span>
+                        </div>
                     </div>
-
 
                     <!-- Certificate 6 -->
-
-                    <div class="certificate-card">
-
-                        <i class="fa-solid fa-code"></i>
-
-                        <h3>
-                            Prompt Engineering Internship
-                        </h3>
-
-                        <p>
-                            Successfully completed a Prompt Engineering
-                            Internship and developed skills in writing
-                            effective prompts and AI-based problem solving.
-                        </p>
-
-                        <span>
-                            SkillCraft Technology
-                        </span>
-
-                        <a
-                            href="images/certificate6.jpg"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            View Certificate →
-                        </a>
-
+                    <div class="certificate-card reveal" data-cert="images/certificate6.jpg" data-title="Prompt Engineering Internship" data-issuer="SkillCraft Technology">
+                        <div class="certificate-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Prompt Engineering Intern</h3>
+                        <p>Successfully completed professional internship designing structured system prompts and evaluation testbeds.</p>
+                        <span class="cert-issuer">SkillCraft Technology</span>
+                        <div class="cert-view-btn">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>View Certificate</span>
+                        </div>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- ================= ACHIEVEMENTS ================= -->
-
-        <section
-            id="achievements"
-            class="section achievements-section"
-        >
-
+        <!-- ================= ACHIEVEMENTS SECTION ================= -->
+        <section id="achievements" class="section achievements-section">
             <div class="container">
-
-                <div class="section-heading">
-
-                    <span>My Journey</span>
-
-                    <h2>
-                        Achievements
-                    </h2>
-
-                    <p>
-                        Highlights from my academic,
-                        technical and open-source journey.
-                    </p>
-
+                <div class="section-heading reveal">
+                    <span class="section-badge">Milestones</span>
+                    <h2>Key Achievements</h2>
+                    <p>Highlights of my academic, community leadership, and technical milestones.</p>
                 </div>
-
 
                 <div class="achievement-grid">
-
-
-                    <!-- Achievement 1 -->
-
-                    <div class="achievement-card">
-
-                        <div class="achievement-number">
-                            10+
-                        </div>
-
-                        <h3>
-                            Certificates
-                        </h3>
-
-                        <p>
-                            Technical certifications, internships,
-                            workshops and learning experiences.
-                        </p>
-
+                    <div class="achievement-card reveal">
+                        <div class="achievement-number count-up" data-target="10">10+</div>
+                        <h3>Certificates Earned</h3>
+                        <p>Industry simulations, internships & technical workshops</p>
                     </div>
 
-
-                    <!-- Achievement 2 -->
-
-                    <div class="achievement-card">
-
-                        <div class="achievement-number">
-                            05+
-                        </div>
-
-                        <h3>
-                            Projects
-                        </h3>
-
-                        <p>
-                            Practical development, web development
-                            and data analytics projects.
-                        </p>
-
+                    <div class="achievement-card reveal">
+                        <div class="achievement-number count-up" data-target="5">5+</div>
+                        <h3>Practical Projects</h3>
+                        <p>Data analytics dashboards & responsive web apps</p>
                     </div>
 
-
-                    <!-- Achievement 3 -->
-
-                    <div class="achievement-card">
-
-                        <div class="achievement-number">
-                            OSCI'26
-                        </div>
-
-                        <h3>
-                            Campus Lead
-                        </h3>
-
-                        <p>
-                            Open Source Connect India 2026
-                            Campus Lead.
-                        </p>
-
+                    <div class="achievement-card reveal">
+                        <div class="achievement-number">OSCI'26</div>
+                        <h3>Campus Lead</h3>
+                        <p>Open Source Connect India 2026 Leadership</p>
                     </div>
 
-
-                    <!-- Achievement 4 -->
-
-                    <div class="achievement-card">
-
-                        <div class="achievement-number">
-                            100+
-                        </div>
-
-                        <h3>
-                            Learning Hours
-                        </h3>
-
-                        <p>
-                            Continuous learning and technical
-                            skill development.
-                        </p>
-
+                    <div class="achievement-card reveal">
+                        <div class="achievement-number count-up" data-target="100">100+</div>
+                        <h3>Learning Hours</h3>
+                        <p>Continuous self-paced development and coding</p>
                     </div>
-
                 </div>
 
-
-                <!-- LINKEDIN MORE -->
-
-                <div class="achievement-more">
-
-                    <p>
-                        Explore more of my certificates,
-                        achievements and professional updates
-                        on LinkedIn.
-                    </p>
-
-                    <a
-                        href="https://www.linkedin.com/in/anand-kumar-691678362"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn primary-btn"
-                    >
+                <div class="achievement-more reveal">
+                    <p>Connect with me on LinkedIn to explore more recommendations, verified posts, and updates.</p>
+                    <a href="https://www.linkedin.com/in/anand-kumar-691678362" target="_blank" rel="noopener noreferrer" class="btn primary-btn">
                         <i class="fa-brands fa-linkedin"></i>
-                        View More on LinkedIn
+                        <span>Connect on LinkedIn</span>
                     </a>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- ================= CONTACT ================= -->
-
-        <section
-            id="contact"
-            class="section contact-section"
-        >
-
+        <!-- ================= CONTACT SECTION ================= -->
+        <section id="contact" class="section contact-section">
             <div class="container">
-
-                <div class="section-heading">
-
-                    <span>Contact Me</span>
-
-                    <h2>
-                        Let's Work Together
-                    </h2>
-
-                    <p>
-                        Have an opportunity or project in mind?
-                        Feel free to get in touch.
-                    </p>
-
+                <div class="section-heading reveal">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2>Let's Work Together</h2>
+                    <p>Have an internship opportunity, project idea, or question? Send me a message below!</p>
                 </div>
-
 
                 <div class="contact-content">
-
-
-                    <!-- CONTACT INFO -->
-
-                    <div class="contact-info">
-
-
-                        <!-- Email -->
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-
-                                <i class="fa-solid fa-envelope"></i>
-
+                    <!-- Contact Information Cards -->
+                    <div class="contact-info-list reveal">
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-card-details">
+                                <h3>Email</h3>
+                                <a href="mailto:anandgupta875728@gmail.com">anandgupta875728@gmail.com</a>
                             </div>
-
-                            <div>
-
-                                <h3>
-                                    Email
-                                </h3>
-
-                                <a
-                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=anandgupta875728@gmail.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    anandgupta875728@gmail.com
-                                </a>
-
-                            </div>
-
                         </div>
 
-
-                        <!-- Phone -->
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-
-                                <i class="fa-solid fa-phone"></i>
-
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-card-details">
+                                <h3>Phone</h3>
+                                <a href="tel:+917352644778">+91 7352644778</a>
                             </div>
-
-                            <div>
-
-                                <h3>
-                                    Phone
-                                </h3>
-
-                                <a href="tel:+917352644778">
-                                    +91 7352644778
-                                </a>
-
-                            </div>
-
                         </div>
 
-
-                        <!-- Location -->
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-
-                                <i class="fa-solid fa-location-dot"></i>
-
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-card-details">
+                                <h3>Location</h3>
+                                <p>India</p>
                             </div>
-
-                            <div>
-
-                                <h3>
-                                    Location
-                                </h3>
-
-                                <p>
-                                    India
-                                </p>
-
-                            </div>
-
                         </div>
 
-
-                        <!-- LinkedIn -->
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-
-                                <i class="fa-brands fa-linkedin"></i>
-
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="contact-card-details">
+                                <h3>LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/anand-kumar-691678362" target="_blank" rel="noopener noreferrer">anand-kumar-691678362</a>
                             </div>
-
-                            <div>
-
-                                <h3>
-                                    LinkedIn
-                                </h3>
-
-                                <a
-                                    href="https://www.linkedin.com/in/anand-kumar-691678362"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Visit LinkedIn
-                                </a>
-
-                            </div>
-
                         </div>
 
-
-                        <!-- GitHub -->
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-
-                                <i class="fa-brands fa-github"></i>
-
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+                            <div class="contact-card-details">
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/aanand0809" target="_blank" rel="noopener noreferrer">github.com/aanand0809</a>
                             </div>
-
-                            <div>
-
-                                <h3>
-                                    GitHub
-                                </h3>
-
-                                <a
-                                    href="https://github.com/aanand0809"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Visit GitHub
-                                </a>
-
-                            </div>
-
                         </div>
-
                     </div>
 
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper reveal">
+                        <!-- Inline Toast Notification for feedback -->
+                        <div class="form-toast" id="formToast" role="alert">
+                            <i class="fa-solid fa-circle-check" id="toastIcon"></i>
+                            <span id="toastMessage">Your message has been sent successfully!</span>
+                        </div>
 
-                    <!-- CONTACT FORM -->
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="e.g. John Doe" required>
+                            </div>
 
-                    <form
-                        id="contact-form"
-                        class="contact-form"
-                        action="php/contact.php"
-                        method="POST"
-                    >
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="e.g. john@example.com" required>
+                            </div>
 
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your Name"
-                            required
-                        >
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-control" placeholder="e.g. Internship Opportunity" required>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+                            </div>
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Your Email"
-                            required
-                        >
-
-
-                        <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            placeholder="Subject"
-                            required
-                        >
-
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            placeholder="Your Message"
-                            required
-                        ></textarea>
-
-
-                        <button
-                            type="submit"
-                            class="btn primary-btn"
-                        >
-                            Send Message
-
-                            <i class="fa-solid fa-paper-plane"></i>
-
-                        </button>
-
-                    </form>
-
+                            <button type="submit" id="submitBtn" class="btn primary-btn" style="width: 100%;">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-
             </div>
-
         </section>
 
     </main>
 
-
     <!-- ================= FOOTER ================= -->
-
+    <footer class="footer">
         <div class="container footer-content">
-
-            <p>
-                © 2026 Anand Kumar. All Rights Reserved.
-            </p>
-
-            <p>
-                Built with ❤️ using HTML, CSS & JavaScript.
-            </p>
-            <a href="admin/login.php" class="admin-link">
-    <i class="fa-solid fa-lock"></i>
-    Admin Login
-</a>
-
+            <p>© 2026 Anand Kumar. All rights reserved.</p>
+            <p>Designed & Built with modern Web Standards.</p>
+            <a href="admin/login.html" class="footer-admin">
+                <i class="fa-solid fa-lock"></i>
+                <span>Admin Login</span>
+            </a>
         </div>
-
     </footer>
 
+    <!-- ================= CERTIFICATE LIGHTBOX MODAL ================= -->
+    <div class="cert-modal" id="certModal" aria-hidden="true" role="dialog">
+        <div class="cert-modal-content">
+            <div class="cert-modal-header">
+                <h3 id="certModalTitle">Certificate Preview</h3>
+                <button class="cert-modal-close" id="certModalClose" aria-label="Close certificate preview">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="cert-modal-body">
+                <img id="certModalImg" src="images/certificate1.jpg" alt="Certificate Preview">
+            </div>
+            <div class="cert-modal-footer">
+                <span id="certModalIssuer" class="cert-issuer">Forage</span>
+                <a id="certModalDownload" href="images/certificate1.jpg" target="_blank" rel="noopener noreferrer" class="btn secondary-btn" style="padding: 6px 14px; font-size: 12px;">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>Open High-Res</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <!-- ================= BACK TO TOP ================= -->
-
-    <button
-        id="backToTop"
-        class="back-to-top"
-        title="Back to top"
-    >
+    <!-- ================= BACK TO TOP BUTTON ================= -->
+    <button id="backToTop" class="back-to-top" title="Scroll to top" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-
-    <!-- JavaScript -->
-
+    <!-- JavaScript File -->
     <script src="js/script.js"></script>
 
 </body>
